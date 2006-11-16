@@ -1,0 +1,9 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/01load.t
+t/02new_year_greg.t
+t/03new_year_acad.t
+lib/DateTime/Event/WarwickUniversity.pm
+META.yml                                 Module meta-data (added by MakeMaker)
