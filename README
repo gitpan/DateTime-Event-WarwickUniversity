@@ -1,5 +1,5 @@
-DateTime-Event-WarwickUniversity version 0.02
-=============================================
+DateTime-Event-WarwickUniversity
+================================
 
 DateTime::Event::WarwickUniversity is used for calculating various
 important calendar dates used at the University of Warwick.
@@ -8,16 +8,23 @@ INSTALLATION
 
 To install this module type the following:
 
-   perl Makefile.PL
-   make
-   make test
-   make install
+   perl Build.PL
+   ./Build
+   ./Build test
+   ./Build install
 
 DEPENDENCIES
 
 This module requires these other modules and libraries:
 
   DateTime
+
+These other modules are required to run the tests:
+
+  Test::Pod
+  Test::Pod::Coverage
+  Test::More
+  Test::Exception
 
 COPYRIGHT AND LICENCE
 

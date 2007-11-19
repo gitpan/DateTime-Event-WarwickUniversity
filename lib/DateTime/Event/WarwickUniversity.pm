@@ -29,7 +29,7 @@ use warnings;
 use Carp;
 use Scalar::Util qw/blessed/;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 # http://web.archive.org/web/19980114233111/warwick.ac.uk/info/dates.html
 # http://web.archive.org/web/20001101110549/www.warwick.ac.uk/info/calendar/section1/1.01.html
@@ -163,7 +163,7 @@ L<DateTime>, L<DateTime::Calendar::WarwickUniversity>
 
 Tim Retout E<lt>tim@retout.co.ukE<gt>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT
 
 Copyright (C) 2006, 2007 by Tim Retout
 
