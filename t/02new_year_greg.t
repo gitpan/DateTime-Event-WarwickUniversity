@@ -13,11 +13,11 @@ use DateTime;
 use DateTime::Event::WarwickUniversity;
 
 my %dates = (
-	"2007-01-01"	=>	"2007-10-01",
-	"2006-10-01"	=>	"2006-10-02",
-	"2006-10-02"	=>	"2006-10-02",
-	"2006-01-01"	=>	"2006-10-02",
-	"2006-12-31"	=>	"2006-10-02",
+	"2007-01-01 00:00:00"	=>	"2007-10-01",
+	"2006-10-01 00:00:00"	=>	"2006-10-02",
+	"2006-10-02 00:00:00"	=>	"2006-10-02",
+	"2006-01-01 00:00:00"	=>	"2006-10-02",
+	"2006-12-31 23:59:59"	=>	"2006-10-02",
 );
 
 plan tests => keys(%dates) * 5 + 5;
@@ -49,10 +49,18 @@ throws_ok { DateTime::Event::WarwickUniversity->new_year_for_gregorian_year($dt_
 #
 
 while( my($in, $expected) = each %dates ) {
-	$in =~ /^(\d{4})-(\d\d)-(\d\d)$/;
-	my $dt_in = DateTime->new( year => $1, month => $2, day => $3 );
+	$in =~ /^(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):(\d\d)$/;
+	my $dt_in = DateTime->new(
+		year => $1,
+		month => $2,
+		day => $3,
+		hour => $4,
+		minute => $5,
+		second => $6,
+		time_zone => 'Europe/London',
+	);
 	$expected =~ /^(\d{4})-(\d\d)-(\d\d)$/;
-	my $dt_expected = DateTime->new( year => $1, month => $2, day => $3 );
+	my $dt_expected = DateTime->new( year => $1, month => $2, day => $3 , time_zone => 'Europe/London');
 
 	my $dt_out = DateTime::Event::WarwickUniversity->new_year_for_gregorian_year($dt_in);
 
@@ -71,8 +79,8 @@ while( my($in, $expected) = each %dates ) {
 	is( $dt_out->locale, $dt_in->locale,
 		"Input locale same as output locale");
 	# result
-	is( $dt_out, $dt_expected,
-		"Result is the expected DateTime for $dt_in");
+	ok( $dt_out == $dt_expected,
+		"$dt_in: expected $dt_expected, got $dt_out");
   }
 }
 
