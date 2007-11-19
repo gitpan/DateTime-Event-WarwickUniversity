@@ -29,7 +29,7 @@ use warnings;
 use Carp;
 use Scalar::Util qw/blessed/;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # http://web.archive.org/web/19980114233111/warwick.ac.uk/info/dates.html
 # http://web.archive.org/web/20001101110549/www.warwick.ac.uk/info/calendar/section1/1.01.html

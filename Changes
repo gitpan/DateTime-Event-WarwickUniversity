@@ -1,6 +1,12 @@
 Revision history for Perl extension DateTime::Event::WarwickUniversity.
 
-0.02  Sun Nov 19 00:12:35 2007
+0.03  Mon Nov 19 22:48:04 2007
+	- Correct date of last Changes entry.
+	- Switch to Module::Build to get nicer META.yml
+	- Add explicit Test::Exception and Test::More dependencies.
+	- Add Test::Pod and Test::Pod::Coverage tests.
+
+0.02  Sun Nov 18 00:12:35 2007
 	- Update future term dates from Warwick website.
 	- Change tests to use 'Europe/London' time zone.
 	- Use floating time zone for calculations.

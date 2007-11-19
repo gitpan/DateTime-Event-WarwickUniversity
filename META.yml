@@ -1,11 +1,22 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         DateTime-Event-WarwickUniversity
-version:      0.02
-version_from: lib/DateTime/Event/WarwickUniversity.pm
-installdirs:  site
+---
+name: DateTime-Event-WarwickUniversity
+version: 0.03
+author:
+  - 'Tim Retout E<lt>tim@retout.co.ukE<gt>'
+abstract: Warwick University academic calendar events
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
-    DateTime:                      0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30_01
+  DateTime: 0
+  Test::Exception: 0
+  Test::More: 0
+  perl: 5.8.4
+provides:
+  DateTime::Event::WarwickUniversity:
+    file: lib/DateTime/Event/WarwickUniversity.pm
+    version: 0.03
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
