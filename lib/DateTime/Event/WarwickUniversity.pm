@@ -29,7 +29,7 @@ use warnings;
 use Carp;
 use Scalar::Util qw/blessed/;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # http://web.archive.org/web/19980114233111/warwick.ac.uk/info/dates.html
 # http://web.archive.org/web/20001101110549/www.warwick.ac.uk/info/calendar/section1/1.01.html
@@ -58,7 +58,11 @@ my %new_year = (
 	2014 => ['09', '29'],
 	2015 => ['10', '05'],
 	2016 => ['10', '03'],
+	2017 => ['10', '02'],
 );
+
+my $min_year = 1996;
+my $max_year = 2017;
 
 =head1 METHODS
 
@@ -77,18 +81,7 @@ sub new_year_for_gregorian_year {
 	croak("Input must be DateTime object")
 		unless ( defined($dt) && blessed($dt) && $dt->isa('DateTime') );
 
-	my $year = $dt->year;
-
-	croak("Input outside supported range.")
-		if ( $year < 1996 || $year > 2015 );
-
-	my $date = $new_year{$year};
-
-	my $dt_new_year = DateTime->new(
-		year	=> $year,
-		month	=> $date->[0],
-		day	=> $date->[1],
-	);
+	my $dt_new_year = _new_year_dt_from_gregorian_year($dt->year);
 
 	# Want to preserve input class/timezone/locale and don't want to alter
 	# input object, so use:
@@ -141,7 +134,7 @@ sub _new_year_dt_from_gregorian_year {
 	my $year = shift;
 
 	croak("Input outside supported range.")
-		if ( $year < 1996 || $year > 2015 );
+		if ( $year < $min_year || $year > $max_year );
 
 	my $date = $new_year{$year};
 
@@ -165,7 +158,7 @@ Tim Retout E<lt>tim@retout.co.ukE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2006, 2007 by Tim Retout
+Copyright (C) 2006, 2007, 2008 by Tim Retout
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.4 or,

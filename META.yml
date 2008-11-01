@@ -1,6 +1,6 @@
 ---
 name: DateTime-Event-WarwickUniversity
-version: 0.04
+version: 0.05
 author:
   - 'Tim Retout <tim@retout.co.uk>'
 abstract: Warwick University academic calendar events
@@ -18,8 +18,8 @@ build_requires:
 provides:
   DateTime::Event::WarwickUniversity:
     file: lib/DateTime/Event/WarwickUniversity.pm
-    version: 0.04
-generated_by: Module::Build version 0.2808
+    version: 0.05
+generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

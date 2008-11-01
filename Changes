@@ -1,5 +1,11 @@
 Revision history for Perl extension DateTime::Event::WarwickUniversity.
 
+0.05  Sat Nov 01 22:41:19 2008
+        - Factor out _new_year_dt_from_gregorian_year copy from
+          new_year_for_gregorian_year.
+        - Fix tests for lowest/highest supported years.
+        - Update future term dates to 2017.
+
 0.04  Mon Nov 19 23:34:22 2007
 	- Correct 0.02 Changes date again. It really was today.
 	- Change/add dependencies on test modules to build_requires.

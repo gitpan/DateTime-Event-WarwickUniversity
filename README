@@ -28,7 +28,7 @@ These other modules are required to run the tests:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2006, 2007 by Tim Retout
+Copyright (C) 2006, 2007, 2008 by Tim Retout
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.4 or,
